@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from "svelte"
+    import { base } from '$app/paths'
     import { slide } from 'svelte/transition'
     import { quintOut } from 'svelte/easing'
     import Swiper, { Navigation, Pagination } from 'swiper'
@@ -103,8 +104,8 @@
 
 <header class="fixed top-0 w-full z-10 px-4 lg:px-20 py-6 bg-white">
     <div class="flex items-center justify-between gap-4">
-        <a href="/" class="logo col-span-2 lg:col-span-1 flex items-center gap-2 self-center">
-            <img src="/logo-lg.png" alt="Grocer Daily logo" width="40" height="40" />
+        <a href="{base}/" class="logo col-span-2 lg:col-span-1 flex items-center gap-2 self-center">
+            <img src="{base}/logo-lg.png" alt="Grocer Daily logo" width="40" height="40" />
 
             <h1 class="text-2xl text-rose-500 uppercase whitespace-nowrap">
                 M<span class="text-xl">ake</span> M<span class="text-xl">y</span> D<span class="text-xl">eals</span>
@@ -113,25 +114,25 @@
 
         <div class="flex items-center gap-2">
             <nav class="fixed bottom-0 left-0 w-full flex items-center justify-between bg-rose-500 text-white md:bg-transparent md:text-slate-800 md:static">
-                <a href="#home" class="inline-block md:flex md:items-center md:gap-2 grow md:grow-0 text-center px-4 py-2 border-y-2 border-rose-500 outline-none md:border-t-0 md:border-b-2 md:border-transparent hover:bg-white md:hover:border-rose-500 hover:text-rose-500 md:focus:text-rose-500 md:focus:border-rose-500">
+                <a href="{base}#home" class="inline-block md:flex md:items-center md:gap-2 grow md:grow-0 text-center px-4 py-2 border-y-2 border-rose-500 outline-none md:border-t-0 md:border-b-2 md:border-transparent hover:bg-white md:hover:border-rose-500 hover:text-rose-500 md:focus:text-rose-500 md:focus:border-rose-500">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-auto">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
                     </svg>
                     <span class="sr-only md:not-sr-only">Home</span>
                 </a>
-                <a href="#shop" class="inline-block md:flex md:items-center md:gap-2 grow md:grow-0 text-center px-4 py-2 border-y-2 border-rose-500 outline-none md:border-t-0 md:border-b-2 md:border-transparent hover:bg-white md:hover:border-rose-500 hover:text-rose-500 md:focus:text-rose-500 md:focus:border-rose-500">
+                <a href="{base}#shop" class="inline-block md:flex md:items-center md:gap-2 grow md:grow-0 text-center px-4 py-2 border-y-2 border-rose-500 outline-none md:border-t-0 md:border-b-2 md:border-transparent hover:bg-white md:hover:border-rose-500 hover:text-rose-500 md:focus:text-rose-500 md:focus:border-rose-500">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-auto">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                     </svg>
                     <span class="sr-only md:not-sr-only">Shop</span>
                 </a>
-                <a href="#contact" class="inline-block md:flex md:items-center md:gap-2 grow md:grow-0 text-center px-4 py-2 border-y-2 border-rose-500 outline-none md:border-t-0 md:border-b-2 md:border-transparent hover:bg-white md:hover:border-rose-500 hover:text-rose-500 md:focus:text-rose-500 md:focus:border-rose-500">
+                <a href="{base}#contact" class="inline-block md:flex md:items-center md:gap-2 grow md:grow-0 text-center px-4 py-2 border-y-2 border-rose-500 outline-none md:border-t-0 md:border-b-2 md:border-transparent hover:bg-white md:hover:border-rose-500 hover:text-rose-500 md:focus:text-rose-500 md:focus:border-rose-500">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-auto">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                     </svg>
                     <span class="sr-only md:not-sr-only">Contact</span>
                 </a>
-                <a href="#faqs" class="inline-block md:flex md:items-center md:gap-2 grow md:grow-0 text-center px-4 py-2 border-y-2 border-rose-500 outline-none md:border-t-0 md:border-b-2 md:border-transparent hover:bg-white md:hover:border-rose-500 hover:text-rose-500 md:focus:text-rose-500 md:focus:border-rose-500">
+                <a href="{base}#faqs" class="inline-block md:flex md:items-center md:gap-2 grow md:grow-0 text-center px-4 py-2 border-y-2 border-rose-500 outline-none md:border-t-0 md:border-b-2 md:border-transparent hover:bg-white md:hover:border-rose-500 hover:text-rose-500 md:focus:text-rose-500 md:focus:border-rose-500">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-auto">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12" />
                     </svg>
@@ -161,7 +162,7 @@
                             </svg>
                         </button>
 
-                        <a href="#preferences" class="text-gray-700 flex items-center justify-between gap-2 w-full px-4 text-left text-sm rounded-md border-2 border-transparent outline-none hover:text-rose-500 focus:text-rose-500 focus:border-rose-500">
+                        <a href="{base}#preferences" class="text-gray-700 flex items-center justify-between gap-2 w-full px-4 text-left text-sm rounded-md border-2 border-transparent outline-none hover:text-rose-500 focus:text-rose-500 focus:border-rose-500">
                             <span>Preferences</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
@@ -255,7 +256,7 @@
                 {#each recommendedProducts as product, index}
                     <div class="swiper-slide">
                         <div class="w-full h-full flex flex-col items-center justify-center">
-                            <img src="/item-0{index + 1}.png" alt={product}>
+                            <img src="{base}/item-0{index + 1}.png" alt={product}>
                             <span>{product}</span>
                         </div>
                     </div>
@@ -284,7 +285,7 @@
                 {#each Array.from(Array(3).keys()) as offer, index}
                     <div class="swiper-slide">
                         <div class="w-full h-full flex flex-col items-center justify-center">
-                            <img src="/offer-0{index + 1}.png" alt="offer {index + 1}">
+                            <img src="{base}/offer-0{index + 1}.png" alt="offer {index + 1}">
                         </div>
                     </div>
                 {/each}
@@ -295,7 +296,7 @@
     </section>
 
     <!-- <section class="call-to-action px-4 lg:px-20 py-6">
-        <img src="/call-to-action.png" alt="Call to action">
+        <img src="{base}/call-to-action.png" alt="Call to action">
     </section> -->
 
     <section class="call-to-action px-4 lg:px-20 py-6">
@@ -306,7 +307,7 @@
                     <p class="text-xl">Delivered directly to your door!</p>
                 </div>
 
-                <a href="#shop-now" class="max-w-fit flex items-center gap-2 text-2xl text-rose-500 uppercase outline-none hover:gap-4 focus:gap-4 transition-all">
+                <a href="{base}#shop-now" class="max-w-fit flex items-center gap-2 text-2xl text-rose-500 uppercase outline-none hover:gap-4 focus:gap-4 transition-all">
                     <span>Shop now</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
@@ -323,8 +324,8 @@
 </main>
 
 <footer class="grid grid-cols-1 lg:grid-cols-5 gap-8 bg-white px-4 lg:px-20 py-20">
-    <a href="/" class="h-full logo flex flex-col items-center gap-2 self-center">
-        <img src="/logo-lg.png" alt="Grocer Daily logo" width="70" height="70" />
+    <a href="{base}/" class="h-full logo flex flex-col items-center gap-2 self-center">
+        <img src="{base}/logo-lg.png" alt="Grocer Daily logo" width="70" height="70" />
 
         <h1 class="text-2xl text-rose-500 uppercase">
             MMD
@@ -334,30 +335,30 @@
     <div class="space-y-4">
         <h2 class="text-2xl font-bold">All Categories</h2>
         <ul class="flex flex-wrap lg:block gap-4 lg:space-y-2">
-            <li><a href="#grocery">Grocery</a></li>
-            <li><a href="#garment">Garment</a></li>
-            <li><a href="#food">Food</a></li>
+            <li><a href="{base}#grocery">Grocery</a></li>
+            <li><a href="{base}#garment">Garment</a></li>
+            <li><a href="{base}#food">Food</a></li>
         </ul>
     </div>
 
     <div class="space-y-4">
         <h2 class="text-2xl font-bold">Account</h2>
         <ul class="flex flex-wrap lg:block gap-4 lg:space-y-2">
-            <li><a href="#my-account">My Account</a></li>
-            <li><a href="#order-history">Order History</a></li>
-            <li><a href="#wishlist">Wishlist</a></li>
-            <li><a href="#payment">Payment</a></li>
-            <li><a href="#address">Address</a></li>
+            <li><a href="{base}#my-account">My Account</a></li>
+            <li><a href="{base}#order-history">Order History</a></li>
+            <li><a href="{base}#wishlist">Wishlist</a></li>
+            <li><a href="{base}#payment">Payment</a></li>
+            <li><a href="{base}#address">Address</a></li>
         </ul>
     </div>
 
     <div class="space-y-4">
         <h2 class="text-2xl font-bold">Help and Support</h2>
         <ul class="flex flex-wrap lg:block gap-4 lg:space-y-2">
-            <li><a href="#grocery">FAQs</a></li>
-            <li><a href="#garment">Terms and Condition</a></li>
-            <li><a href="#food">Privacy Policy</a></li>
-            <li><a href="#food">Delivery Policy</a></li>
+            <li><a href="{base}#grocery">FAQs</a></li>
+            <li><a href="{base}#garment">Terms and Condition</a></li>
+            <li><a href="{base}#food">Privacy Policy</a></li>
+            <li><a href="{base}#food">Delivery Policy</a></li>
         </ul>
     </div>
 
