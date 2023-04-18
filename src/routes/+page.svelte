@@ -314,7 +314,7 @@
                     </svg>
                 </a>
             </div>
-            <div class="grow h-full bg-[url('/call-to-action-cropped.png')] bg-[right_bottom] bg-contain bg-no-repeat"></div>
+            <div class="grow h-full bg-[url('{base}/call-to-action-cropped.png')] bg-[right_bottom] bg-contain bg-no-repeat"></div>
         </div>
     </section>
 

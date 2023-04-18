@@ -1,6 +1,7 @@
 import { defineConfig } from '@twind/core'
 import presetAutoprefix from '@twind/preset-autoprefix'
 import presetTailwind from '@twind/preset-tailwind'
+import { base } from '$app/paths'
 
 export default defineConfig({
     /* @twind/with-sveltekit will use hashed class names in production by default
@@ -13,7 +14,7 @@ export default defineConfig({
             backgroundImage: {
                 hero: `
                     linear-gradient(to right, rgba(30, 41, 59, 50%), rgba(30, 41, 59, 50%)),
-                    url('/banner.jpeg')
+                    url('${base}/banner.jpeg')
                 `
             },
             // backgroundSize: {
