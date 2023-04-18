@@ -14,7 +14,8 @@ const config = {
             base: dev ? '' : process.env.BASE_PATH,
         },
         prerender: {
-            handleMissingId: 'ignore'
+            handleMissingId: 'ignore',
+            entries: []
         }
 	}
 };
