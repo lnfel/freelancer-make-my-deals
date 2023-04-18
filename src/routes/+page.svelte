@@ -152,7 +152,7 @@
                 </button>
 
                 {#if open}
-                    <div on:click|stopPropagation={()=>{}} on:keydown={menuKeyboardListener} transition:slide="{{delay: 250, duration: 300, easing: quintOut, axis: 'y'}}" class="absolute right-0 z-10 mt-2 whitespace-nowrap origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 p-1 focus:outline-none space-y-2" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                    <div on:click|stopPropagation={()=>{}} on:keydown={menuKeyboardListener} in:slide="{{delay: 250, duration: 300, easing: quintOut, axis: 'y'}}" out:slide="{{delay: 250, duration: 300, easing: quintOut, axis: 'y'}}" class="absolute right-0 z-10 mt-2 whitespace-nowrap origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 p-1 focus:outline-none space-y-2" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                         <div class="text-lg font-medium text-gray-700 px-4 pt-2">Taylor Otwell</div>
 
                         <button type="button" class="text-gray-700 flex items-center justify-between gap-2 w-full px-4 text-left text-sm rounded-md border-2 border-transparent outline-none hover:text-rose-500 focus:text-rose-500 focus:border-rose-500">
