@@ -140,7 +140,7 @@
                 </a>
             </nav>
 
-            <div class="relative inline-block text-left self-center place-self-end">
+            <div class="relative inline-block text-left">
                 <!-- <button type="button" on:click|stopPropagation={toggleAvatarDropdown} on:keydown={menuKeyboardListener} class="w-10 h-10 p-1 rounded-full bg-white text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-rose-300 outline-none hover:bg-rose-500 focus:bg-rose-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
                     <img src={data.auth.user?.picture} alt={data.auth.user?.name} referrerpolicy="no-referrer" class="rounded-full">
                 </button> -->
