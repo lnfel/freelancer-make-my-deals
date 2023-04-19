@@ -7,12 +7,15 @@
     import 'swiper/css'
     import 'swiper/css/navigation'
     import 'swiper/css/pagination'
+    // import item1 from '../../static/item-01.png'
+    // import item1 from '$lib/item-01.png'
 
+    // const items = import.meta.glob('../../static/item-**.png', { eager: true, as: 'url', import: 'default' })
     const recommendedProducts = [
         'Grocery and Staples', 'Celebrations', 'Fresh and Frozen Food', 'Dairy and Bakery Products',
         'Oil and Ghee', 'Personal Care', 'Snacks', 'Household Items'
     ]
-    onMount(() => {
+    onMount(async () => {
         document.addEventListener('click', closeAvatarDropdown)
 
         const productSuggestions = new Swiper('.swiper-product-suggestions', {
@@ -22,10 +25,10 @@
             spaceBetween: 30,
             slidesPerView: 2,
             freeMode: true,
-            // pagination: {
-            //     el: ".swiper-pagination",
-            //     clickable: true
-            // },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            },
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -35,10 +38,10 @@
             // },
             breakpoints: {
                 768: {
-                    slidesPerView: 3
+                    slidesPerView: 3,
                 },
                 1024: {
-                    slidesPerView: 4
+                    slidesPerView: 4,
                 }
             }
         })
@@ -64,6 +67,12 @@
                 }
             }
         })
+
+        // { eager: true, as: 'url', import: 'default' }
+        // console.log('items: ', items)
+        // console.log('items: ', items['../../static/item-01.png'].replace('/static', ''))
+        // const item1 = await import(`../../static/item-0${'1'}.png`)
+        // console.log('item1: ', item1)
     })
     let open = false
     function toggleAvatarDropdown() {
@@ -105,7 +114,7 @@
 <header class="fixed top-0 w-full z-10 px-4 lg:px-20 py-6 bg-white">
     <div class="flex items-center justify-between gap-4">
         <a href="{base}/" class="logo col-span-2 lg:col-span-1 flex items-center gap-2 self-center">
-            <img src="{base}/logo-lg.png" alt="Grocer Daily logo" width="40" height="40" />
+            <img src="{base}/logo-lg.png" alt="Make My Deals logo" width="40" height="40" />
 
             <h1 class="text-2xl text-rose-500 uppercase whitespace-nowrap">
                 M<span class="text-xl">ake</span> M<span class="text-xl">y</span> D<span class="text-xl">eals</span>
@@ -254,19 +263,23 @@
         <div class="swiper swiper-product-suggestions w-full h-60">
             <div class="swiper-wrapper text-slate-800">
                 {#each recommendedProducts as product, index}
+                    <!-- {@const src = new URL(`../../static/item-0${index + 1}.png`, import.meta.url).href} -->
                     <div class="swiper-slide">
-                        <div class="w-full h-full flex flex-col items-center justify-center">
+                        <div class="w-full h-full flex flex-col items-center justify-center text-center py-6">
                             <img src="{base}/item-0{index + 1}.png" alt={product}>
-                            <span>{product}</span>
+                            <!-- <img src="{base}{items[`../../static/item-0${index + 1}.png`].replace('/static', '')}" alt={product}> -->
+                            <!-- <img src="{base}{src}" alt={product}> -->
+                            <span class="grow">{product}</span>
+                            <!-- <div>{items[`../../static/item-0${index + 1}.png`]}</div> -->
                         </div>
                     </div>
                 {/each}
             </div>
 
-            <!-- <div class="swiper-pagination"></div> -->
+            <div class="swiper-pagination md:!hidden"></div>
 
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev !hidden md:!flex"></div>
+            <div class="swiper-button-next !hidden md:!flex"></div>
 
             <!-- <div class="swiper-scrollbar"></div> -->
         </div>
